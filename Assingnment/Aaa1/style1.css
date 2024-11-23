@@ -1,0 +1,188 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  background: #f9f9f9;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: #282a36;
+  padding: 1rem;
+  align-items: center;
+  position: fixed;
+}
+
+.menu ul {
+  display: flex;
+  gap: 1rem;
+
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: aliceblue;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.logo h1::before {
+  content: "C";
+  color: bisque;
+  font-size: 1.8rem;
+}
+.logo h1 {
+  color: #ffd5a2;
+}
+
+.below {
+  display: flex;
+  gap: 2rem;
+  /* border: 1px solid #000; */
+  padding: 2rem;
+  background: #ececed;
+}
+
+.bio {
+  display: flex;
+  flex-flow: column;
+  /* gap: 2rem; */
+}
+
+.bio h1 {
+  margin: 2rem;
+}
+
+.bio .profile img {
+  height: 10rem;
+  width: 10rem;
+}
+
+.main {
+  display: flex;
+  flex-flow: column;
+  /* align-items: center; */
+  padding: 5rem 10rem;
+}
+
+.hobbies {
+  width: 100%;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+}
+
+.hobbies h1 {
+  margin: 2rem;
+}
+.hobbies ul {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+}
+
+.hobbies ul li {
+  width: max-content;
+  background: #ffb22c;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  color: #605e5f;
+  font-size: 1.2rem;
+}
+.hobbies ul li:hover {
+  background: #ffa304;
+  transition: 0.5s all;
+  cursor: pointer;
+}
+/* Form Styling */
+.form {
+  border-top: 3px solid #605e5f;
+  border-top-style: dashed;
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #ececed;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-flow: column;
+  width: 100%;
+  max-width: 400px;
+  gap: 1.5rem;
+  margin: 2rem;
+}
+
+form label {
+  display: flex;
+  flex-flow: column;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  text-align: left;
+}
+
+form input[type="text"],
+form input[type="email"] {
+  padding: 0.8rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus {
+  border-color: #ffb22c;
+}
+
+form input[type="submit"] {
+  padding: 0.8rem;
+  background-color: #ffb22c;
+  color: white;
+  border: none;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+  background-color: #ffa304;
+}
+
+form span {
+  margin-bottom: 0.5rem;
+  color: #605e5f;
+}
+
+p {
+  font-size: 1.1rem;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+}

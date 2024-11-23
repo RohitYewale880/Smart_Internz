@@ -1,0 +1,160 @@
+<!-- 
+? Assignment - 1
+? Title: Personal Profile
+? 	
+? Instructions: Create a personal profile webpage with the help of HTML, CSS & JS. Please complete the tasks below in order to create your Personal Profile Webpage	
+? 	
+? •	Task 1: A header with your name and a navigation menu.
+? •	Task 2: A section with a brief bio and a photo.
+? •	Task 3: A section with a list of your hobbies.
+? •	Task 4: A form that allows visitors to send you a message.
+? •	Task 5: Basic CSS styling to make the page visually appealing.
+? •	Task 6: JavaScript to add interactivity, such as form validation and dynamic content updates.
+ 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="header">
+          <nav class="navbar">
+            <div class="logo">
+              <h1>hanchal</h1>
+            </div>
+            <div class="menu">
+              <ul>
+                <li><a href="#bio">About me</a></li>
+                <li><a href="#hobbies">Hobbies</a></li>
+                <li><a href="#msg">Contact</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="main">
+          <div class="bio" id="bio">
+            <div class="title"><h1>About Me</h1></div>
+            <div class="below">
+              <div class="profile">
+                <img src="profile.png" alt="" />
+              </div>
+              <div class="desc">
+                <p>
+                  My name is Prasad Vasant Mali. I am currently
+                  pursuing a Master of Computer Applications (MCA) and
+                  specialize in building dynamic, user-friendly web
+                  applications. My technical expertise includes JavaScript,
+                  React, and Node.js, with hands-on experience in developing web
+                  platforms like car booking systems and freelance job
+                  marketplaces. I am also proficient in integrating APIs,
+                  creating responsive designs, and ensuring smooth user
+                  experiences through my knowledge of frameworks like Material
+                  UI. Currently, I am working on building custom CSS frameworks
+                  and exploring chatbot integrations in React applications.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hobbies" id="hobbies">
+            <h1>Hobbies</h1>
+            <ul>
+              <li>Playing Guitar</li>
+              <li>Playing Games</li>
+              <li>Singing</li>
+              <li>Music Composition</li>
+              <!-- <li></li> -->
+            </ul>
+          </div>
+          <div class="form" id="msg">
+            <h1>Contact Me</h1>
+            <form>
+              <label for="name">
+                <span>Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Name"
+                  required
+                />
+              </label>
+              <label for="email">
+                <span>Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                  required
+                />
+              </label>
+              <label for="message">
+                <span>Message</span>
+                <input
+                  type="text"
+                  name="message"
+                  id="message"
+                  placeholder="Message"
+                  required
+                />
+              </label>
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Form Validation
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.querySelector("form");
+        const nameInput = document.getElementById("name");
+        const emailInput = document.getElementById("email");
+        const messageInput = document.getElementById("message");
+
+        // Form Submit Event
+        form.addEventListener("submit", function (event) {
+          let isValid = true;
+
+          // Name Validation
+          if (nameInput.value.trim() === "") {
+            alert("Please enter your name");
+            isValid = false;
+          }
+
+          // Email Validation
+          if (!validateEmail(emailInput.value)) {
+            alert("Please enter a valid email address");
+            isValid = false;
+          }
+
+          // Message Validation
+          if (messageInput.value.trim() === "") {
+            alert("Please enter a message");
+            isValid = false;
+          }
+
+          // Prevent form submission if validation fails
+          if (!isValid) {
+            event.preventDefault();
+          } else {
+            alert("Message sent successfully!");
+          }
+        });
+
+        // Email validation helper function
+        function validateEmail(email) {
+          const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          return re.test(String(email).toLowerCase());
+        }
+      });
+    </script>
+  </body>
+</html>
